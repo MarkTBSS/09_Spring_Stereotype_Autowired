@@ -1,0 +1,379 @@
+ลืม สิ่งต่างๆ ที่เคยรู้มาไปก่อน
+ลืม มายาคติ ที่เคยรู้มาไปก่อน
+
+เกษตรกรยากจน?
+เพื่อนผมเป็นเกษตรกรอยู่ในชนบทที่โคราช ขับรถ Pausche ป้ายแดง
+เพื่อนผมเป็นเกษตรกรอยู่ในชนบทที่โคราช ขับ Mercedes ป้ายแดง
+ผมยังขับรถญี่ปุ่นอยู่เลย
+อีกคนอยู่โคราช เป็นคนดัง มีอาชีพ เป็นเกษตรกร เป็น Influencer ด้านหวย
+ชื่อแม่น้ำหนึ่ง มีบริษัทรายได้ประมาณ 70 ล้านต่อปี
+อีกคนบ้านอยู่นครศรีธรรมราช พ่อเป็นเกษตรกร ส่งลูกไปเรียนเมืองได้ พ่อทำสวนยางพารา
+
+เพื่อนคนไหนอันตรายที่สุด
+คนโง่แสดงตัวโง่
+คนโง่แสดงตัวฉลาด
+คนฉลาดแสดงตัวโง่
+คนฉลาดแสดงตัวฉลาด
+
+แนวคิดแต่ละอย่าง อาจจะดีหรือแย่ แล้วแต่สถานการณ์
+อย่าเพิ่งไปตัดสินว่าดี หรือ แย่ 
+สิ่งต่างที่จะได้เรียนวันนี้ เราคิดว่าดี เพราะเป็น Buzzword
+
+AI หลอกใครไม่ได้แล้ว ต้องมีคำใหม่มา  Generative AI
+Big Data หลอกใครไม่ได้แล้ว
+Machine Learning หลอกใครไม่ได้แล้ว
+Deep Learning หลอกใครไม่ได้แล้ว
+
+อย่างน้อยในสหรัฐ มีแนวคิดอย่างหนึ่ง คือ ต้องเป็นคน Coin คำศัพท์ขึ้นมาให้ได้
+The Last Lecture - Randy Pausch
+Randy Pausch coined the word "Virtual Reality".
+
+1. Inversion of Control
+2. Aspect-Oriented Product
+
+Dependency มีหลายความหมาย
+
+1. Spring Dependency Injection
+          '----------------------> ?
+
+2. Maven Dependency
+          '----------------------> ?
+
+You should go the theatre.
+                  '-----------> ดู Context
+
+ในภาษาอังกฤษที่ประเทศอังกฤษ
+คำว่า Theatre หมายถึง โรงหนัง หรือ ห้องผ่าตัดเล็ก ก็ได้
+
+
+java-14
+'-- pom.xml -----------------------------.
+'-- code                                 |
+'   '-- Start.java ----------.           |
+'   '-- Cashier.java         |           |
+'-- test                     |           |
+    '-- Test.java            |           |
+    '-- TestCashier.java     |           |
+                             |           |
+                             v           |
+.-------------------------------.        |
+| class Start {                 |        |
+|   public static void          |        |
+|   main(String[] data) {       |        |
+|     System.out.println("W");  |        |
+|   }                           |        |
+| }                             |        |
+'-------------------------------'        |
+                                         |
+                                         v
+.-------------------------------------------------------.
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>uk.co.arm</groupId>
+  <artifactId>java-14</artifactId>
+  <version>0.8</version>
+  <build>
+    <sourceDirectory>code</sourceDirectory>
+    <testSourceDirectory>test</testSourceDirectory>
+  </build>
+  <properties>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>RELEASE</version>
+    </dependency>
+  </dependencies>
+</project>
+'-------------------------------------------------------'
+
+1. Spring Dependency Injection
+
+2. Maven Dependency
+   คือคำสั่งเพิ่มเติม หรือ Additional Library
+   หรือ Framework ที่ไม่มีในมาตรฐานของ Java
+
+วันนี้ใช้ Maven Dependency สองตัวคือ spring-core และ spring-context
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>RELEASE</version>
+    </dependency>
+
+Spring Bean หรือถ้ารู้ Context ก็เรียกว่า Bean ก็ได้
+'-- Spring Bean มีความเปลี่ยนไปในแต่ละ Version
+'-- Spring Bean ใน Spring Core รุ่น 1 ต่างจาก Spring Bean ใน Spring Core รุ่น 2
+'-- ปัจจุบัน Spring Bean คือ Instance ธรรมดา
+'-- ปัจจุบัน Spring Bean คือ Object ธรรมดา
+'-- ปัจจุบัน Spring Bean คือ Managed Instance
+'-- ปัจจุบัน Spring Bean คือ Manageable Instance
+
+Instance ใน Java
+---------------
+การสร้าง Instance ใช้ Keyword ว่า new เช่น
+
+  Cashier c = new Cashier();
+  System.out.println(c);       // Cashier@12340000
+  c = new Cashier();           // ได้ Address ใหม่เหมือนกัน ส่วน @12340000 หายไปเลย
+  c.name = "Bill G";
+  Cashier b = new Cashier();   // ได้ Address ใหม่
+
+  new Cashier(); // ทั้ง 3 ตัวนี้ มี Address 3 Address เลย
+  new Cashier(); // เมื่อไม่ได้เก็บ Address ก็ไม่มีใครจำมันได้ ดังนั้นนั้น Address สามตัวนี้จะหายไป
+  new Cashier();
+
+สรุป สร้าง Instance ขึ้น 6 ตัว เอากลับมาใช้ได้แค่ 2 ตัว 
+อีก 4 ตัว ไม่ได้เก็บ Address ไว้ ก็จะตามตัวไม่เจอ
+
+ตามความคิดของผม ในโลกของ Coding ไม่มี Object เหมือนโลกนี้ไม่มีคนดี
+ใครคิดว่ามี Object ก็นิยามขึ้นมา
+
+new เป็น Operator ใช้สร้าง Instance เพราะ มี Operator ที่ตรงข้ามกัน ชื่อ instanceof
+new ไม่ได้ใช้สร้าง Object ไม่มีทาง
+Object เป็น Buzzword ไม่มีความหมาย หลอกคนได้
+
+ตัวแปร c จะเก็บ Address เอาไว้อ้างอิง
+การอ้างอิงถึง Instance จะใช้ Address แทน
+
+พอ Address ไหนไม่ได้ใช้ Java จะมีระบบที่เรียกว่า Garbage Collector
+มาคอย เก็บกวาด Address นั้นทิ้งไป เพื่อเหลือ Memory กลับไปคืนให้ Operating System
+
+ในหนังสือทั่วไปใช้คำว่า Object ขอให้รู้ว่า ผมเรียกว่า Instance
+ในหนังสือภาษา C ใช้คำว่า Pointer ขอให้รู้ไว้ว่า ผมเรียกว่า Address
+ในหนังสือภาษา Java ใช้คำว่า Reference ขอให้รู้ไว้ว่า ผมเรียกว่า Address
+
+ลืม Java ไปก่อน จะพาไปรู้จัก 2 คำคือ
+'-- JavaBeans
+'-- Spring Bean
+
+ทำไมต้องมีคำว่า Bean หรือ JavaBeans หรือ Spring Bean
+เพราะเขาต้องการหลีกเลี่ยงคำว่า Object
+คำว่า Object เป็น Buzzword
+
+https://javapuzzle.com/spring-boot-reactive.html
+
+คำทุกคำที่ Java คิดขึ้นมา เช่น JavaBeans ล้วนแล้วแต่ต้องการหลีกเลี่ยงคำว่า Object
+คำทุกคำที่ Spring คิดขึ้นมาจากคน คนเดียว ชื่อ Doctor Rod Johnson เช่น Spring Bean ล้วนแล้วแต่ต้องการหลีกเลี่ยงคำว่า Object
+คำทุกคำที่ผมคิดขึ้นมา เช่น Instance ล้วนแล้วแต่ต้องการหลีกเลี่ยงคำว่า Object
+
+Class ใน Java ต่างจาก Class ใน C++
+Object ใน Java ต่างจาก Object ใน JavaScript
+
+สมมุติโลกนี้ไม่เคยมีคำว่า Object
+
+Spring Bean (หรือ Bean) เป็น Manageable Instance
+เมื่อสร้าง Spring Bean ขึ้นมาแล้ว สามารถอ้างอิงได้ 3 วิธี
+
+1. ใช้ Address
+2. ใช้ชื่อของ Spring Bean หรือ Id เป็น String เช่น "front-cashier"
+3. ใช้ชนิดของข้อมูล เช่น Cashier.class หรือ String.class
+
+การสร้าง Spring Bean ทำได้ 3 วิธีมาตรฐานของ Spring
+1. สร้างแบบ Manually โดยการเรียกใช้คำสั่ง registerBean()
+2. สร้างด้วย XML
+3. สร้างด้วย Annotation
+ใครไม่ชอบ 3 วิธีมาตรฐาน ก็คิดขึ้นมาเองได้
+
+1. สร้างแบบ Manually
+โดยการเรียกใช้คำสั่ง registerBean()
+ซึ่งใน Method นี้มีการ new ให้เองเลย
+Code ที่เรียกใช้งานไม่ต้อง new เพราะ Address จะหายไป
+เรียกใช้คำสั่ง registerBean() มันจะช่วยเก็บ Address ไว้ให้
+
+แค่มี Spring Bean ยังใช้ไม่ได้
+ต้องมี Spring Container ด้วย
+Spring Container มีชื่อเรียกหลายชื่อ เช่น Spring IoC Container หรือ Container ก็ได้
+Spring Container มี 2 แบบ 
+1. BeanFactory สร้าง Bean แบบ Manually
+2. ApplicationContext สร้าง Bean ได้ 3 แบบ
+แต่ไม่ว่าเลือกใช้ Spring Container แบบไหนก็ตาม
+หน้าที่ของ Spring Container คือ Manage Bean
+1. สร้าง Spring Bean ให้
+2. เก็บ Address ของ Spring Bean ไว้ให้
+3. ค้นหา Spring Bean จาก Name หรือ Class
+
+ใน Spring Container หน้าตาเป็นแบบนี้
+
+.-------------.-----------------.-----------------.
+| Address     | Name or Id      | Class           |
+'-------------'-----------------'-----------------'
+  0x10000000    team-a            Team
+  0x20000000    p1                Player
+  0x30000000    p2                Player
+  0x40000000    p3                Player
+
+จะเห็น Class ชื่อ Player มี Spring Bean อยู่ 3 Instances
+แต่ Class ชื่อ Team มี Instance เดียว
+การที่ 1 Class มี 1 Instance เรียกว่า Singleton
+
+
+1. การสร้าง Spring Bean แบบ Manually
+   ใช้กับ GenericApplicationContext
+
+   GenericApplicationContext คืออะไร?
+   GenericApplicationContext คือ Application Context ที่ต้องสร้าง Spring Bean แบบ Manually
+
+
+import org.springframework.context.support
+		.GenericApplicationContext;
+
+class Start {
+	public static void main(String[] data) {
+		GenericApplicationContext context;
+		context = new GenericApplicationContext();
+		context.registerBean(Cashier.class);
+		context.registerBean(Cashier.class);
+		context.registerBean(User.class);
+		context.refresh();
+		String[] beans = context
+						.getBeanDefinitionNames();
+		for (int i = 0; i < beans.length; i++) {
+			System.out.println(beans[i]);
+		}
+	}
+}
+class Cashier { }
+class Player { }
+class User { }
+class Team { }
+
+By Default, Spring Bean เป็นแบบ Singleton
+ถ้าอยากสร้าง Spring Bean แบบ Prototype หรือ Multiton ทำยังไง?
+ใน GenericApplicationContext ต้องกำหนดชื่อของ Spring Bean มาเลย
+
+ไม่มีใครอธิบาย OOP ได้ถูกต้อง ยกเว้นคนที่ Coined มันขึ้นมา
+ไม่มีใครอธิบาย Spring ได้ถูกต้อง ยกเว้นคนที่ Coined มันขึ้นมา Doctor Rod Johnson
+
+1 Class ถูกสร้างขึ้นมาแค่ 1 Instance เรียกว่า Singleton
+1 Class ถูกสร้างขึ้นมาแค่ 1 Object เรียกว่า Singleton
+1 Class ถูกสร้างขึ้นมาแค่ 1 Bean เรียกว่า Singleton
+
+Spring Container หรือ Spring IoC Container 
+มี 2 แบบคือ 1. Bean Factory กับ 2. Application Context
+
+Spring Container หรือ Spring IoC Container 
+มีหน้าที่ 3 อย่าง
+1. สร้าง Spring Bean
+2. เก็บข้อมูลของ Spring Bean (Address, Name, Class)
+3. ค้นหา Spring Bean และส่ง Address ไปให้
+ข้อ 3 เรียกว่า Spring Dependency Injection
+
+A. GenericApplicationContext
+   A1. registerBean()
+       refresh()
+   A2.
+   A3. getBean()
+
+B. FileSystemApplicationContext
+   B1. Use XML to create bean
+   B2.
+   B3. getBean()
+
+C. AnnotationConfigApplicationContext
+   C1. @Bean
+   C2.
+   C3. @Autowired
+
+ตัวอย่างการ Spring Bean แบบ Multiton บน GenericApplicationContext
+
+import org.springframework.context.support
+		.GenericApplicationContext;
+
+class Start {
+	public static void main(String[] data) {
+		GenericApplicationContext context;
+		context = new GenericApplicationContext();
+		context.registerBean("a", Cashier.class);
+		context.registerBean("b", Cashier.class);
+		context.registerBean("c", User.class);
+		context.refresh();
+		
+		Cashier x = context.getBean("b", Cashier.class);
+		x.name = "Jeff B";
+		x.location = "Front Desk";
+		System.out.println(x);  // Cashier@12340000
+		
+		String[] beans = context
+						.getBeanDefinitionNames();
+		for (int i = 0; i < beans.length; i++) {
+			System.out.println(beans[i]);
+		}
+		Cashier w = context.getBean("b", Cashier.class);
+		System.out.println(w);  // Cashier@12340000
+		System.out.println(w.name); // Jeff B
+	}
+}
+class Cashier {
+	String name;
+	String location;
+}
+class Player { }
+class User { }
+class Team { }
+
+https://javapuzzle.com/buzzword-01.html
+
+แบบที่ 2 คือการสร้าง Spring Bean ด้วย XML
+
+java-14
+'-- pom.xml
+'-- active.xml    <--.
+'-- frankfurt.xml    '
+'-- milan.xml   -----'
+'-- london.xml
+'-- code
+'   '-- Start.java
+'   '-- Cashier.java
+
+Spring Framework ถูกสร้างขึ้นมาเพื่อให้เขียน Code แล้วเขียน Configuration ตามหลัง
+"เขียน Code แล้วเขียน Configuration ตามหลัง" เป็นหลักการที่ Popularized by SAP
+
+File: active.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="main" class="Team"></bean>
+	<bean id="t1" class="Team"></bean>
+	<bean id="t2" class="Team"></bean>
+	<bean id="t3" class="Team"></bean>
+	<bean id="t4" class="Team"></bean>
+</beans>
+
+
+File: code/Start.java
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support
+		.FileSystemXmlApplicationContext;
+class Start {
+	public static void main(String[] data) {
+		ApplicationContext context;
+		context = new FileSystemXmlApplicationContext
+						("active.xml");
+		Team t = context.getBean("main", Team.class);
+		String [] beans = context.getBeanDefinitionNames();
+		for (int i = 0; i < beans.length; i++) {
+			System.out.println(beans[i]);
+		}
+	}
+}
+class Team { }
+
+
+1. Spring Bean
+2. Spring Container (1. BeanFactory, 2. Application Context)
+   1. Create Bean (1. Manually, 2. XML, 3. Annotation)
+   2. Storage Bean Detail (1. Address, 2. Name, 3. Class)
+   3. Lookup Bean and return the address
+
+https://codestar.work/java-2023-11-14.txt
